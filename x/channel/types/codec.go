@@ -9,12 +9,16 @@ import (
 
 func RegisterCodec(cdc *codec.LegacyAmino) {
 	cdc.RegisterConcrete(&MsgOpenchannel{}, "channel/Openchannel", nil)
+	cdc.RegisterConcrete(&MsgClosechannel{}, "channel/Closechannel", nil)
 	// this line is used by starport scaffolding # 2
 }
 
 func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
 	registry.RegisterImplementations((*sdk.Msg)(nil),
 		&MsgOpenchannel{},
+	)
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgClosechannel{},
 	)
 	// this line is used by starport scaffolding # 3
 

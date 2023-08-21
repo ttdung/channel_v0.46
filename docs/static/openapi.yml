@@ -44105,6 +44105,8 @@ definitions:
         type: string
       sequence:
         type: string
+  channel.channel.MsgClosechannelResponse:
+    type: object
   channel.channel.MsgOpenchannelResponse:
     type: object
     properties:

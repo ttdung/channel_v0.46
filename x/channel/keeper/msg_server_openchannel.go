@@ -25,7 +25,7 @@ func (k msgServer) Openchannel(goCtx context.Context, msg *types.MsgOpenchannel)
 	}
 
 	multiAddr := msg.GetSigners()[0]
-	
+
 	if msg.CoinA.Amount.IsPositive() {
 		err = k.bankKeeper.SendCoins(ctx, addrA, multiAddr, sdk.Coins{*msg.CoinA})
 		if err != nil {

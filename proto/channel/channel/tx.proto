@@ -8,19 +8,32 @@ option go_package = "channel/x/channel/types";
 
 // Msg defines the Msg service.
 service Msg {
-  rpc Openchannel (MsgOpenchannel) returns (MsgOpenchannelResponse);
+  rpc Openchannel  (MsgOpenchannel ) returns (MsgOpenchannelResponse );
+  rpc Closechannel (MsgClosechannel) returns (MsgClosechannelResponse);
 }
 message MsgOpenchannel {
-  string creator      = 1;
-  string partA        = 2;
-  string partB        = 3;
+  string                   creator      = 1;
+  string                   partA        = 2;
+  string                   partB        = 3;
   cosmos.base.v1beta1.Coin coinA        = 4;
   cosmos.base.v1beta1.Coin coinB        = 5;
-  string multisigAddr = 6;
-  string sequence     = 7;
+  string                   multisigAddr = 6;
+  string                   sequence     = 7;
 }
 
 message MsgOpenchannelResponse {
   string id = 1;
 }
+
+message MsgClosechannel {
+  string creator      = 1;
+  string multisigAddr = 2;
+  string partA        = 3;
+  cosmos.base.v1beta1.Coin coinA        = 4;
+  string partB        = 5;
+  cosmos.base.v1beta1.Coin coinB        = 6;
+  string channelid    = 7;
+}
+
+message MsgClosechannelResponse {}
 
