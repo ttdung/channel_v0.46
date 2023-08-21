@@ -30,6 +30,14 @@ func TestGenesisState_Validate(t *testing.T) {
 						Index: "1",
 					},
 				},
+				CommitmentList: []types.Commitment{
+					{
+						Index: "0",
+					},
+					{
+						Index: "1",
+					},
+				},
 				// this line is used by starport scaffolding # types/genesis/validField
 			},
 			valid: true,
@@ -38,6 +46,20 @@ func TestGenesisState_Validate(t *testing.T) {
 			desc: "duplicated channel",
 			genState: &types.GenesisState{
 				ChannelList: []types.Channel{
+					{
+						Index: "0",
+					},
+					{
+						Index: "0",
+					},
+				},
+			},
+			valid: false,
+		},
+		{
+			desc: "duplicated commitment",
+			genState: &types.GenesisState{
+				CommitmentList: []types.Commitment{
 					{
 						Index: "0",
 					},

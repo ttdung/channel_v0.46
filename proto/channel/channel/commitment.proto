@@ -1,0 +1,18 @@
+syntax = "proto3";
+package channel.channel;
+
+option go_package = "channel/x/channel/types";
+
+message Commitment {
+  string index = 1; 
+  string multisigAddr = 2; 
+  string creatoraddr = 3; 
+  string partneraddr = 4; 
+  string hashcode = 5; 
+  uint64 numblock = 6;
+  string cointocreator = 7; 
+  string cointohtlc = 8; 
+  string channelid = 9; 
+  
+}
+

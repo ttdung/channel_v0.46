@@ -7,6 +7,7 @@ import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "channel/channel/params.proto";
 import "channel/channel/channel.proto";
+import "channel/channel/commitment.proto";
 
 option go_package = "channel/x/channel/types";
 
@@ -26,6 +27,16 @@ service Query {
   }
   rpc ChannelAll (QueryAllChannelRequest) returns (QueryAllChannelResponse) {
     option (google.api.http).get = "/channel/channel/channel";
+  
+  }
+  
+  // Queries a list of Commitment items.
+  rpc Commitment    (QueryGetCommitmentRequest) returns (QueryGetCommitmentResponse) {
+    option (google.api.http).get = "/channel/channel/commitment/{index}";
+  
+  }
+  rpc CommitmentAll (QueryAllCommitmentRequest) returns (QueryAllCommitmentResponse) {
+    option (google.api.http).get = "/channel/channel/commitment";
   
   }
 }
@@ -53,6 +64,23 @@ message QueryAllChannelRequest {
 
 message QueryAllChannelResponse {
   repeated Channel                                channel    = 1 [(gogoproto.nullable) = false];
+           cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryGetCommitmentRequest {
+  string index = 1;
+}
+
+message QueryGetCommitmentResponse {
+  Commitment commitment = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllCommitmentRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllCommitmentResponse {
+  repeated Commitment                             commitment = 1 [(gogoproto.nullable) = false];
            cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
 

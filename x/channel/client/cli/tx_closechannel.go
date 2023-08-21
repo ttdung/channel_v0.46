@@ -27,10 +27,12 @@ func CmdClosechannel() *cobra.Command {
 			argCoinB := args[4]
 			argChannelid := args[5]
 
+			cmd.Flags().Set(flags.FlagFrom, args[0])
 			clientCtx, err := client.GetClientTxContext(cmd)
 			if err != nil {
 				return err
 			}
+
 			_, err = sdk.AccAddressFromBech32(argMultisigAddr)
 			if err != nil {
 				return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid from address (%s)", err)
