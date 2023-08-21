@@ -211,10 +211,37 @@ paths:
                       type: string
                     numblock:
                       type: string
+                      format: uint64
                     cointocreator:
-                      type: string
+                      type: object
+                      properties:
+                        denom:
+                          type: string
+                        amount:
+                          type: string
+                      description: >-
+                        Coin defines a token with a denomination and an amount.
+
+
+                        NOTE: The amount field is an Int which implements the
+                        custom method
+
+                        signatures required by gogoproto.
                     cointohtlc:
-                      type: string
+                      type: object
+                      properties:
+                        denom:
+                          type: string
+                        amount:
+                          type: string
+                      description: >-
+                        Coin defines a token with a denomination and an amount.
+
+
+                        NOTE: The amount field is an Int which implements the
+                        custom method
+
+                        signatures required by gogoproto.
                     channelid:
                       type: string
               pagination:
@@ -347,10 +374,37 @@ paths:
                     type: string
                   numblock:
                     type: string
+                    format: uint64
                   cointocreator:
-                    type: string
+                    type: object
+                    properties:
+                      denom:
+                        type: string
+                      amount:
+                        type: string
+                    description: >-
+                      Coin defines a token with a denomination and an amount.
+
+
+                      NOTE: The amount field is an Int which implements the
+                      custom method
+
+                      signatures required by gogoproto.
                   cointohtlc:
-                    type: string
+                    type: object
+                    properties:
+                      denom:
+                        type: string
+                      amount:
+                        type: string
+                    description: >-
+                      Coin defines a token with a denomination and an amount.
+
+
+                      NOTE: The amount field is an Int which implements the
+                      custom method
+
+                      signatures required by gogoproto.
                   channelid:
                     type: string
         default:
@@ -44313,10 +44367,31 @@ definitions:
         type: string
       numblock:
         type: string
+        format: uint64
       cointocreator:
-        type: string
+        type: object
+        properties:
+          denom:
+            type: string
+          amount:
+            type: string
+        description: |-
+          Coin defines a token with a denomination and an amount.
+
+          NOTE: The amount field is an Int which implements the custom method
+          signatures required by gogoproto.
       cointohtlc:
-        type: string
+        type: object
+        properties:
+          denom:
+            type: string
+          amount:
+            type: string
+        description: |-
+          Coin defines a token with a denomination and an amount.
+
+          NOTE: The amount field is an Int which implements the custom method
+          signatures required by gogoproto.
       channelid:
         type: string
   channel.channel.MsgClosechannelResponse:
@@ -44331,6 +44406,10 @@ definitions:
     properties:
       id:
         type: string
+  channel.channel.MsgWithdrawHashlockResponse:
+    type: object
+  channel.channel.MsgWithdrawTimelockResponse:
+    type: object
   channel.channel.Params:
     type: object
     description: Params defines the parameters for the module.
@@ -44400,10 +44479,37 @@ definitions:
               type: string
             numblock:
               type: string
+              format: uint64
             cointocreator:
-              type: string
+              type: object
+              properties:
+                denom:
+                  type: string
+                amount:
+                  type: string
+              description: >-
+                Coin defines a token with a denomination and an amount.
+
+
+                NOTE: The amount field is an Int which implements the custom
+                method
+
+                signatures required by gogoproto.
             cointohtlc:
-              type: string
+              type: object
+              properties:
+                denom:
+                  type: string
+                amount:
+                  type: string
+              description: >-
+                Coin defines a token with a denomination and an amount.
+
+
+                NOTE: The amount field is an Int which implements the custom
+                method
+
+                signatures required by gogoproto.
             channelid:
               type: string
       pagination:
@@ -44468,10 +44574,37 @@ definitions:
             type: string
           numblock:
             type: string
+            format: uint64
           cointocreator:
-            type: string
+            type: object
+            properties:
+              denom:
+                type: string
+              amount:
+                type: string
+            description: >-
+              Coin defines a token with a denomination and an amount.
+
+
+              NOTE: The amount field is an Int which implements the custom
+              method
+
+              signatures required by gogoproto.
           cointohtlc:
-            type: string
+            type: object
+            properties:
+              denom:
+                type: string
+              amount:
+                type: string
+            description: >-
+              Coin defines a token with a denomination and an amount.
+
+
+              NOTE: The amount field is an Int which implements the custom
+              method
+
+              signatures required by gogoproto.
           channelid:
             type: string
   channel.channel.QueryParamsResponse:
