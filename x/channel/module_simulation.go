@@ -60,6 +60,18 @@ const (
 	// TODO: Determine the simulation weight value
 	defaultWeightMsgReceivercommit int = 100
 
+	opWeightMsgSenderwithdrawtimelock = "op_weight_msg_senderwithdrawtimelock"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgSenderwithdrawtimelock int = 100
+
+	opWeightMsgSenderwithdrawhashlock = "op_weight_msg_senderwithdrawhashlock"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgSenderwithdrawhashlock int = 100
+
+	opWeightMsgReceiverwithdraw = "op_weight_msg_receiverwithdraw"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgReceiverwithdraw int = 100
+
 	// this line is used by starport scaffolding # simapp/module/const
 )
 
@@ -191,6 +203,39 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	operations = append(operations, simulation.NewWeightedOperation(
 		weightMsgReceivercommit,
 		channelsimulation.SimulateMsgReceivercommit(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgSenderwithdrawtimelock int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgSenderwithdrawtimelock, &weightMsgSenderwithdrawtimelock, nil,
+		func(_ *rand.Rand) {
+			weightMsgSenderwithdrawtimelock = defaultWeightMsgSenderwithdrawtimelock
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgSenderwithdrawtimelock,
+		channelsimulation.SimulateMsgSenderwithdrawtimelock(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgSenderwithdrawhashlock int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgSenderwithdrawhashlock, &weightMsgSenderwithdrawhashlock, nil,
+		func(_ *rand.Rand) {
+			weightMsgSenderwithdrawhashlock = defaultWeightMsgSenderwithdrawhashlock
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgSenderwithdrawhashlock,
+		channelsimulation.SimulateMsgSenderwithdrawhashlock(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgReceiverwithdraw int
+	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgReceiverwithdraw, &weightMsgReceiverwithdraw, nil,
+		func(_ *rand.Rand) {
+			weightMsgReceiverwithdraw = defaultWeightMsgReceiverwithdraw
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgReceiverwithdraw,
+		channelsimulation.SimulateMsgReceiverwithdraw(am.accountKeeper, am.bankKeeper, am.keeper),
 	))
 
 	// this line is used by starport scaffolding # simapp/module/operation

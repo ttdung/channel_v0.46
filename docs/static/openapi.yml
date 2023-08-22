@@ -44691,6 +44691,8 @@ definitions:
         type: string
       transferIndex:
         type: string
+  channel.channel.MsgReceiverwithdrawResponse:
+    type: object
   channel.channel.MsgSendercommitResponse:
     type: object
     properties:
@@ -44698,6 +44700,10 @@ definitions:
         type: string
       transferIndex:
         type: string
+  channel.channel.MsgSenderwithdrawhashlockResponse:
+    type: object
+  channel.channel.MsgSenderwithdrawtimelockResponse:
+    type: object
   channel.channel.MsgWithdrawHashlockResponse:
     type: object
   channel.channel.MsgWithdrawTimelockResponse:
