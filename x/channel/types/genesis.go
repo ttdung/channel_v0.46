@@ -10,8 +10,9 @@ const DefaultIndex uint64 = 1
 // DefaultGenesis returns the default genesis state
 func DefaultGenesis() *GenesisState {
 	return &GenesisState{
-		ChannelList:    []Channel{},
-		CommitmentList: []Commitment{},
+		ChannelList:       []Channel{},
+		CommitmentList:    []Commitment{},
+		FwdcommitmentList: []Fwdcommitment{},
 		// this line is used by starport scaffolding # genesis/types/default
 		Params: DefaultParams(),
 	}
@@ -39,6 +40,16 @@ func (gs GenesisState) Validate() error {
 			return fmt.Errorf("duplicated index for commitment")
 		}
 		commitmentIndexMap[index] = struct{}{}
+	}
+	// Check for duplicated index in fwdcommitment
+	fwdcommitmentIndexMap := make(map[string]struct{})
+
+	for _, elem := range gs.FwdcommitmentList {
+		index := string(FwdcommitmentKey(elem.Index))
+		if _, ok := fwdcommitmentIndexMap[index]; ok {
+			return fmt.Errorf("duplicated index for fwdcommitment")
+		}
+		fwdcommitmentIndexMap[index] = struct{}{}
 	}
 	// this line is used by starport scaffolding # genesis/types/validate
 

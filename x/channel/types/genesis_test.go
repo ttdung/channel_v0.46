@@ -38,6 +38,14 @@ func TestGenesisState_Validate(t *testing.T) {
 						Index: "1",
 					},
 				},
+				FwdcommitmentList: []types.Fwdcommitment{
+					{
+						Index: "0",
+					},
+					{
+						Index: "1",
+					},
+				},
 				// this line is used by starport scaffolding # types/genesis/validField
 			},
 			valid: true,
@@ -60,6 +68,20 @@ func TestGenesisState_Validate(t *testing.T) {
 			desc: "duplicated commitment",
 			genState: &types.GenesisState{
 				CommitmentList: []types.Commitment{
+					{
+						Index: "0",
+					},
+					{
+						Index: "0",
+					},
+				},
+			},
+			valid: false,
+		},
+		{
+			desc: "duplicated fwdcommitment",
+			genState: &types.GenesisState{
+				FwdcommitmentList: []types.Fwdcommitment{
 					{
 						Index: "0",
 					},

@@ -47,22 +47,22 @@ func (k msgServer) Commitment(goCtx context.Context, msg *types.MsgCommitment) (
 		if err != nil {
 			return nil, err
 		}
-
-		unlockBlock := msg.Numblock + uint64(ctx.BlockHeight())
-
-		commitment := types.Commitment{
-			Index:         indexStr,
-			MultisigAddr:  msg.MultisigAddr,
-			Creatoraddr:   msg.Creatoraddr,
-			Partneraddr:   msg.Partneraddr,
-			Hashcode:      msg.Hashcode,
-			Numblock:      unlockBlock,
-			Cointocreator: msg.Cointocreator,
-			Cointohtlc:    msg.Cointohtlc,
-			Channelid:     msg.Channelid,
-		}
-		k.Keeper.SetCommitment(ctx, commitment)
 	}
+
+	unlockBlock := msg.Numblock + uint64(ctx.BlockHeight())
+
+	commitment := types.Commitment{
+		Index:         indexStr,
+		MultisigAddr:  msg.MultisigAddr,
+		Creatoraddr:   msg.Creatoraddr,
+		Partneraddr:   msg.Partneraddr,
+		Hashcode:      msg.Hashcode,
+		Numblock:      unlockBlock,
+		Cointocreator: msg.Cointocreator,
+		Cointohtlc:    msg.Cointohtlc,
+		Channelid:     msg.Channelid,
+	}
+	k.Keeper.SetCommitment(ctx, commitment)
 
 	k.Keeper.RemoveChannel(ctx, msg.Channelid)
 
