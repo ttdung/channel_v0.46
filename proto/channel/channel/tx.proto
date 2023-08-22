@@ -16,6 +16,7 @@ service Msg {
   rpc Fund             (MsgFund            ) returns (MsgFundResponse            );
   rpc Acceptfund       (MsgAcceptfund      ) returns (MsgAcceptfundResponse      );
   rpc Sendercommit     (MsgSendercommit    ) returns (MsgSendercommitResponse    );
+  rpc Receivercommit   (MsgReceivercommit  ) returns (MsgReceivercommitResponse  );
 }
 message MsgOpenchannel {
   string                   creator      = 1;
@@ -105,23 +106,42 @@ message MsgAcceptfundResponse {
 }
 
 message MsgSendercommit {
-  string creator          =  1;
-  string senderAddr       =  2;
-  string channelid        =  3;
+  string                   creator          =  1;
+  string                   senderAddr       =  2;
+  string                   channelid        =  3;
   cosmos.base.v1beta1.Coin cointosender     =  4;
   cosmos.base.v1beta1.Coin cointohtlc       =  5;
   cosmos.base.v1beta1.Coin cointransfer     =  6;
-  string hashcodehtlc     =  7;
-  uint64 timelockhtlc     =  8;
-  string hashcodedest     =  9;
-  uint64 timelockreceiver = 10;
-  uint64 timelocksender   = 11;
-  string multisigAddr     = 12;
-  string transferIndex    = 13;
+  string                   hashcodehtlc     =  7;
+  uint64                   timelockhtlc     =  8;
+  string                   hashcodedest     =  9;
+  uint64                   timelockreceiver = 10;
+  uint64                   timelocksender   = 11;
+  string                   multisigAddr     = 12;
+  string                   transferIndex    = 13;
 }
 
 message MsgSendercommitResponse {
-  string htlcIndex = 1;
+  string htlcIndex     = 1;
+  string transferIndex = 2;
+}
+
+message MsgReceivercommit {
+  string creator        =  1;
+  string receiverAddr   =  2;
+  string channelid      =  3;
+  cosmos.base.v1beta1.Coin cointoreceiver =  4;
+  cosmos.base.v1beta1.Coin cointohtlc     =  5;
+  cosmos.base.v1beta1.Coin cointransfer   =  6;
+  string hashcodehtlc   =  7;
+  uint64 timelockhtlc   =  8;
+  string hashcodedest   =  9;
+  uint64 timelocksender = 10;
+  string multisigAddr   = 11;
+}
+
+message MsgReceivercommitResponse {
+  string htlcIndex     = 1;
   string transferIndex = 2;
 }
 

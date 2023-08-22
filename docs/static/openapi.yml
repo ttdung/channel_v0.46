@@ -44684,6 +44684,13 @@ definitions:
     properties:
       id:
         type: string
+  channel.channel.MsgReceivercommitResponse:
+    type: object
+    properties:
+      htlcIndex:
+        type: string
+      transferIndex:
+        type: string
   channel.channel.MsgSendercommitResponse:
     type: object
     properties:
