@@ -22,7 +22,7 @@ func (k msgServer) WithdrawTimelock(goCtx context.Context, msg *types.MsgWithdra
 	}
 
 	if val.Numblock > uint64(ctx.BlockHeight()) {
-		return nil, errors.New("wait until valid blokcheight")
+		return nil, errors.New("wait until valid block height")
 	}
 
 	to, err := sdk.AccAddressFromBech32(msg.To)
@@ -33,7 +33,12 @@ func (k msgServer) WithdrawTimelock(goCtx context.Context, msg *types.MsgWithdra
 	if k.bankKeeper.BlockedAddr(to) {
 		err = fmt.Errorf("%s is not allowed to receive funds", msg.To)
 	} else {
-		err = k.Keeper.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, to, sdk.Coins{*val.Cointohtlc})
+		err = k.Keeper.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, to, sdk.Coins{
+			sdk.Coin{
+				Denom:  val.Cointohtlc.Denom,
+				Amount: val.Cointohtlc.Amount,
+			},
+		})
 		if err != nil {
 			return nil, err
 		}

@@ -44394,9 +44394,19 @@ definitions:
           signatures required by gogoproto.
       channelid:
         type: string
+  channel.channel.MsgAcceptfundResponse:
+    type: object
+    properties:
+      id:
+        type: string
   channel.channel.MsgClosechannelResponse:
     type: object
   channel.channel.MsgCommitmentResponse:
+    type: object
+    properties:
+      id:
+        type: string
+  channel.channel.MsgFundResponse:
     type: object
     properties:
       id:

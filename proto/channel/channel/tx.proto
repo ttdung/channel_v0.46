@@ -13,6 +13,8 @@ service Msg {
   rpc Commitment       (MsgCommitment      ) returns (MsgCommitmentResponse      );
   rpc WithdrawTimelock (MsgWithdrawTimelock) returns (MsgWithdrawTimelockResponse);
   rpc WithdrawHashlock (MsgWithdrawHashlock) returns (MsgWithdrawHashlockResponse);
+  rpc Fund             (MsgFund            ) returns (MsgFundResponse            );
+  rpc Acceptfund       (MsgAcceptfund      ) returns (MsgAcceptfundResponse      );
 }
 message MsgOpenchannel {
   string                   creator      = 1;
@@ -72,4 +74,32 @@ message MsgWithdrawHashlock {
 }
 
 message MsgWithdrawHashlockResponse {}
+
+message MsgFund {
+  string                   creator       = 1;
+  string                   creatoraddr   = 2;
+  string                   channelid     = 3;
+  cosmos.base.v1beta1.Coin cointoPartner = 4;
+  string                   hashcode      = 5;
+  uint64                   numblock      = 6;
+  string                   multisigAddr  = 7;
+}
+
+message MsgFundResponse {
+  string id = 1;
+}
+
+message MsgAcceptfund {
+  string creator       = 1;
+  string creatoraddr   = 2;
+  string channelid     = 3;
+  cosmos.base.v1beta1.Coin cointoCreator = 4;
+  string hashcode      = 5;
+  uint64 numblock      = 6;
+  string multisigAddr  = 7;
+}
+
+message MsgAcceptfundResponse {
+  string id = 1;
+}
 
