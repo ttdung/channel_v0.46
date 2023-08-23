@@ -18,7 +18,7 @@ func (k msgServer) Senderwithdrawtimelock(goCtx context.Context, msg *types.MsgS
 
 	val, found := k.Keeper.GetFwdcommitment(ctx, msg.Transferindex)
 	if !found {
-		return nil, fmt.Errorf("Transferindex %d is not existing", msg.Transferindex)
+		return nil, fmt.Errorf("Transferindex %v is not existing", msg.Transferindex)
 	}
 
 	if val.SenderAddr != msg.To {

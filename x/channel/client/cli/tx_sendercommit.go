@@ -15,9 +15,9 @@ var _ = strconv.Itoa(0)
 
 func CmdSendercommit() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "sendercommit [sender-addr] [channelid] [cointosender] [cointohtlc] [cointransfer] [hashcodehtlc] [timelockhtlc] [hashcodedest] [timelockreceiver] [timelocksender] [multisig-addr] [transfer-index]",
+		Use:   "sendercommit [sender-addr] [channelid] [cointosender] [cointohtlc] [cointransfer] [hashcodehtlc] [timelockhtlc] [hashcodedest] [timelockreceiver] [timelocksender] [multisig-addr]",
 		Short: "Broadcast message sendercommit",
-		Args:  cobra.ExactArgs(12),
+		Args:  cobra.ExactArgs(11),
 		RunE: func(cmd *cobra.Command, args []string) (err error) {
 			argSenderAddr := args[0]
 			argChannelid := args[1]
@@ -30,7 +30,6 @@ func CmdSendercommit() *cobra.Command {
 			//argTimelockreceiver := args[8]
 			//argTimelocksender := args[9]
 			argMultisigAddr := args[10]
-			argTransferIndex := args[11]
 
 			cmd.Flags().Set(flags.FlagFrom, argMultisigAddr)
 			clientCtx, err := client.GetClientTxContext(cmd)
@@ -84,7 +83,6 @@ func CmdSendercommit() *cobra.Command {
 				argTimelockreceiver,
 				argTimelocksender,
 				argMultisigAddr,
-				argTransferIndex,
 			)
 			if err := msg.ValidateBasic(); err != nil {
 				return err

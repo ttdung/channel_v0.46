@@ -1,6 +1,9 @@
 package keeper_test
 
 import (
+	"crypto/sha256"
+	"encoding/base64"
+	"fmt"
 	"testing"
 
 	testkeeper "channel/testutil/keeper"
@@ -13,6 +16,8 @@ func TestGetParams(t *testing.T) {
 	params := types.DefaultParams()
 
 	k.SetParams(ctx, params)
+	hash := sha256.Sum256([]byte("bcdf"))
+	fmt.Println("hashcode:", base64.StdEncoding.EncodeToString(hash[:]))
 
 	require.EqualValues(t, params, k.GetParams(ctx))
 }

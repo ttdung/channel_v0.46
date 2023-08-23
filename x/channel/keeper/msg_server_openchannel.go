@@ -49,6 +49,7 @@ func (k msgServer) Openchannel(goCtx context.Context, msg *types.MsgOpenchannel)
 		PartA:        msg.PartA,
 		PartB:        msg.PartB,
 		Denom:        msg.CoinA.Denom,
+		Sequence:     msg.Sequence,
 	}
 
 	k.Keeper.SetChannel(ctx, channel)

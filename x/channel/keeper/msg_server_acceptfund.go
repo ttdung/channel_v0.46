@@ -55,8 +55,10 @@ func (k msgServer) Acceptfund(goCtx context.Context, msg *types.MsgAcceptfund) (
 	if coin_acceptside.Amount.IsPositive() {
 		err = k.bankKeeper.SendCoins(ctx, from, to, sdk.Coins{*coin_acceptside})
 		if err != nil {
-			return nil, fmt.Errorf("SendCoins failed balance of addr", val.MultisigAddr, " balance:", coin_channel.Amount.Uint64(),
-				"required amount:", coin_acceptside.Amount.Uint64())
+			return nil, fmt.Errorf("SendCoins failed balance of addr %v, balance: %v, required amt: %v",
+				val.MultisigAddr,
+				coin_channel.Amount.Uint64(),
+				coin_acceptside.Amount.Uint64())
 		}
 	}
 
@@ -66,7 +68,8 @@ func (k msgServer) Acceptfund(goCtx context.Context, msg *types.MsgAcceptfund) (
 	if coin_htlc.Amount.IsPositive() {
 		err = k.Keeper.bankKeeper.SendCoinsFromAccountToModule(ctx, from, types.ModuleName, sdk.Coins{coin_htlc})
 		if err != nil {
-			return nil, fmt.Errorf("@@@ SendCoinsFromAccountToModule failed, Addr:", val.MultisigAddr, " balance:", coin_channel.Amount.Uint64())
+			return nil, fmt.Errorf("@@@ SendCoinsFromAccountToModule failed, Addr: %v, balance: %v ",
+				val.MultisigAddr, coin_channel.Amount.Uint64())
 		}
 	}
 
@@ -89,7 +92,7 @@ func (k msgServer) Acceptfund(goCtx context.Context, msg *types.MsgAcceptfund) (
 	k.Keeper.SetCommitment(ctx, commitment)
 
 	if creatorAddr != msg.Creatoraddr {
-		return nil, fmt.Errorf("Not matching receiver address! expected:", creatorAddr)
+		return nil, fmt.Errorf("Not matching receiver address! expected: %v", creatorAddr)
 	}
 
 	k.Keeper.RemoveChannel(ctx, msg.Channelid)

@@ -19,7 +19,7 @@ func (k msgServer) Receiverwithdraw(goCtx context.Context, msg *types.MsgReceive
 	}
 
 	if val.ReceiverAddr != msg.To {
-		return nil, fmt.Errorf("not matching receiver address! expected:", val.ReceiverAddr)
+		return nil, fmt.Errorf("not matching receiver address! expected: %v", val.ReceiverAddr)
 	}
 
 	hash := sha256.Sum256([]byte(msg.Secret))

@@ -13,7 +13,7 @@ func (k msgServer) Receivercommit(goCtx context.Context, msg *types.MsgReceiverc
 	// TODO: Handling the message
 	val, found := k.Keeper.GetChannel(ctx, msg.Channelid)
 	if !found {
-		return nil, fmt.Errorf("ChannelID %d is not existing", msg.Channelid)
+		return nil, fmt.Errorf("ChannelID %v is not existing", msg.Channelid)
 	}
 
 	var partnerAddr, creatorAddr string
@@ -44,7 +44,7 @@ func (k msgServer) Receivercommit(goCtx context.Context, msg *types.MsgReceiverc
 	}
 
 	// Send to HTLC
-	htlcIndex := fmt.Sprintf("%s:%s", msg.MultisigAddr, msg.Hashcodehtlc)
+	htlcIndex := fmt.Sprintf("%s:%s", msg.Channelid, msg.Hashcodehtlc)
 	Cointohtlc := msg.Cointohtlc
 	if Cointohtlc.Amount.IsPositive() {
 		err = k.Keeper.bankKeeper.SendCoinsFromAccountToModule(ctx, from, types.ModuleName, sdk.Coins{*Cointohtlc})
@@ -87,8 +87,8 @@ func (k msgServer) Receivercommit(goCtx context.Context, msg *types.MsgReceiverc
 		Index:            transferIndex,
 		Channelid:        msg.Channelid,
 		MultisigAddr:     msg.MultisigAddr,
-		SenderAddr:       creatorAddr,
-		ReceiverAddr:     partnerAddr,
+		SenderAddr:       partnerAddr,
+		ReceiverAddr:     creatorAddr, // this commitment is created by receiver side
 		Timelockreceiver: 0,
 		Timelocksender:   Timelocksender,
 		Hashcodehtlc:     msg.Hashcodehtlc,

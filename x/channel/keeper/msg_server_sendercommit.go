@@ -53,7 +53,7 @@ func (k msgServer) Sendercommit(goCtx context.Context, msg *types.MsgSendercommi
 		}
 	}
 
-	htlcIndex = fmt.Sprintf("%s:%s", msg.MultisigAddr, msg.Hashcodehtlc)
+	htlcIndex = fmt.Sprintf("%s:%s", msg.Channelid, msg.Hashcodehtlc)
 
 	unlockBlockHtlc := msg.Timelockhtlc + uint64(ctx.BlockHeight())
 

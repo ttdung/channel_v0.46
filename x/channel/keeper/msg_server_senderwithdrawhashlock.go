@@ -20,7 +20,7 @@ func (k msgServer) Senderwithdrawhashlock(goCtx context.Context, msg *types.MsgS
 	}
 
 	if val.SenderAddr != msg.To {
-		return nil, fmt.Errorf("not matching receiver address! expected:", val.SenderAddr)
+		return nil, fmt.Errorf("not matching receiver address! expected: %v", val.SenderAddr)
 	}
 
 	hash := sha256.Sum256([]byte(msg.Secret))

@@ -121,7 +121,6 @@ message MsgSendercommit {
   uint64                   timelockreceiver = 10;
   uint64                   timelocksender   = 11;
   string                   multisigAddr     = 12;
-  string                   transferIndex    = 13;
 }
 
 message MsgSendercommitResponse {
