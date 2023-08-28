@@ -1,9 +1,9 @@
 package keeper
 
 import (
-	"channel/x/channel/types"
 	"context"
 	"fmt"
+	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

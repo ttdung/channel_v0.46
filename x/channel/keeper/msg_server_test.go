@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	keepertest "channel/testutil/keeper"
-	"channel/x/channel/keeper"
-	"channel/x/channel/types"
+	keepertest "github.com/AstraProtocol/astra/channel/testutil/keeper"
+	"github.com/AstraProtocol/astra/channel/x/channel/keeper"
+	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

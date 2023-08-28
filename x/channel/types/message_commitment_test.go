@@ -3,7 +3,7 @@ package types
 import (
 	"testing"
 
-	"channel/testutil/sample"
+	"github.com/AstraProtocol/astra/channel/testutil/sample"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
 )

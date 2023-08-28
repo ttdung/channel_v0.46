@@ -3,7 +3,7 @@ package cmd
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"channel/app"
+	"github.com/AstraProtocol/astra/channel/app"
 )
 
 func initSDKConfig() {

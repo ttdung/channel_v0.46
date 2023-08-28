@@ -6,8 +6,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"channel/app"
-	"channel/cmd/channeld/cmd"
+	"github.com/AstraProtocol/astra/channel/app"
+	"github.com/AstraProtocol/astra/channel/cmd/channeld/cmd"
 )
 
 func main() {

@@ -3,8 +3,8 @@ package keeper
 import (
 	"testing"
 
-	"channel/x/channel/keeper"
-	"channel/x/channel/types"
+	"github.com/AstraProtocol/astra/channel/x/channel/keeper"
+	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	"github.com/cosmos/cosmos-sdk/store"

@@ -3,7 +3,7 @@ package keeper
 import (
 	"context"
 
-	"channel/x/channel/types"
+	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/query"

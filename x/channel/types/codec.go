@@ -8,18 +8,18 @@ import (
 )
 
 func RegisterCodec(cdc *codec.LegacyAmino) {
-	cdc.RegisterConcrete(&MsgOpenchannel{}, "channel/Openchannel", nil)
-	cdc.RegisterConcrete(&MsgClosechannel{}, "channel/Closechannel", nil)
-	cdc.RegisterConcrete(&MsgCommitment{}, "channel/Commitment", nil)
-	cdc.RegisterConcrete(&MsgWithdrawTimelock{}, "channel/WithdrawTimelock", nil)
-	cdc.RegisterConcrete(&MsgWithdrawHashlock{}, "channel/WithdrawHashlock", nil)
-	cdc.RegisterConcrete(&MsgFund{}, "channel/Fund", nil)
-	cdc.RegisterConcrete(&MsgAcceptfund{}, "channel/Acceptfund", nil)
-	cdc.RegisterConcrete(&MsgSendercommit{}, "channel/Sendercommit", nil)
-	cdc.RegisterConcrete(&MsgReceivercommit{}, "channel/Receivercommit", nil)
-	cdc.RegisterConcrete(&MsgSenderwithdrawtimelock{}, "channel/Senderwithdrawtimelock", nil)
-	cdc.RegisterConcrete(&MsgSenderwithdrawhashlock{}, "channel/Senderwithdrawhashlock", nil)
-	cdc.RegisterConcrete(&MsgReceiverwithdraw{}, "channel/Receiverwithdraw", nil)
+	cdc.RegisterConcrete(&MsgOpenchannel{}, "github.com/AstraProtocol/astra/channel/Openchannel", nil)
+	cdc.RegisterConcrete(&MsgClosechannel{}, "github.com/AstraProtocol/astra/channel/Closechannel", nil)
+	cdc.RegisterConcrete(&MsgCommitment{}, "github.com/AstraProtocol/astra/channel/Commitment", nil)
+	cdc.RegisterConcrete(&MsgWithdrawTimelock{}, "github.com/AstraProtocol/astra/channel/WithdrawTimelock", nil)
+	cdc.RegisterConcrete(&MsgWithdrawHashlock{}, "github.com/AstraProtocol/astra/channel/WithdrawHashlock", nil)
+	cdc.RegisterConcrete(&MsgFund{}, "github.com/AstraProtocol/astra/channel/Fund", nil)
+	cdc.RegisterConcrete(&MsgAcceptfund{}, "github.com/AstraProtocol/astra/channel/Acceptfund", nil)
+	cdc.RegisterConcrete(&MsgSendercommit{}, "github.com/AstraProtocol/astra/channel/Sendercommit", nil)
+	cdc.RegisterConcrete(&MsgReceivercommit{}, "github.com/AstraProtocol/astra/channel/Receivercommit", nil)
+	cdc.RegisterConcrete(&MsgSenderwithdrawtimelock{}, "github.com/AstraProtocol/astra/channel/Senderwithdrawtimelock", nil)
+	cdc.RegisterConcrete(&MsgSenderwithdrawhashlock{}, "github.com/AstraProtocol/astra/channel/Senderwithdrawhashlock", nil)
+	cdc.RegisterConcrete(&MsgReceiverwithdraw{}, "github.com/AstraProtocol/astra/channel/Receiverwithdraw", nil)
 	// this line is used by starport scaffolding # 2
 }
 

@@ -3,9 +3,9 @@ package channel
 import (
 	"math/rand"
 
-	"channel/testutil/sample"
-	channelsimulation "channel/x/channel/simulation"
-	"channel/x/channel/types"
+	"github.com/AstraProtocol/astra/channel/testutil/sample"
+	channelsimulation "github.com/AstraProtocol/astra/channel/x/channel/simulation"
+	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	simappparams "github.com/cosmos/cosmos-sdk/simapp/params"
 	sdk "github.com/cosmos/cosmos-sdk/types"

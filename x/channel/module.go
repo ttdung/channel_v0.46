@@ -11,9 +11,9 @@ import (
 
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"channel/x/channel/client/cli"
-	"channel/x/channel/keeper"
-	"channel/x/channel/types"
+	"github.com/AstraProtocol/astra/channel/x/channel/client/cli"
+	"github.com/AstraProtocol/astra/channel/x/channel/keeper"
+	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"

@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"channel/app"
+	"github.com/AstraProtocol/astra/channel/app"
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/crypto/hd"

@@ -1,8 +1,8 @@
 package channel
 
 import (
-	"channel/x/channel/keeper"
-	"channel/x/channel/types"
+	"github.com/AstraProtocol/astra/channel/x/channel/keeper"
+	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

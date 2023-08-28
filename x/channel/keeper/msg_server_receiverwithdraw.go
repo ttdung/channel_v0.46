@@ -1,11 +1,11 @@
 package keeper
 
 import (
-	"channel/x/channel/types"
 	"context"
 	"crypto/sha256"
 	"encoding/base64"
 	"fmt"
+	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
