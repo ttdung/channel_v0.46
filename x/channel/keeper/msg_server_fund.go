@@ -38,6 +38,10 @@ func (k msgServer) Fund(goCtx context.Context, msg *types.MsgFund) (*types.MsgFu
 		creatorAddr = val.PartB
 	}
 
+	if creatorAddr != msg.Creatoraddr {
+		return nil, fmt.Errorf("not matching receiver address! expected: %v", creatorAddr)
+	}
+
 	multisigAddr, err := sdk.AccAddressFromBech32(val.MultisigAddr)
 	if err != nil {
 		return nil, err
@@ -81,10 +85,6 @@ func (k msgServer) Fund(goCtx context.Context, msg *types.MsgFund) (*types.MsgFu
 
 	k.Keeper.SetCommitment(ctx, commitment)
 
-	if creatorAddr != msg.Creatoraddr {
-		return nil, fmt.Errorf("not matching receiver address! expected: %v", creatorAddr)
-	}
-
 	// Send coin to creator of the funding commitment
 	to, err := sdk.AccAddressFromBech32(msg.Creatoraddr)
 	if err != nil {
@@ -96,12 +96,7 @@ func (k msgServer) Fund(goCtx context.Context, msg *types.MsgFund) (*types.MsgFu
 	for i, coin := range cointoPartner {
 		coin_fundside[i] = coinChannel[i].Sub(*coin)
 		if coin_fundside[i].Amount.IsPositive() {
-			err = k.bankKeeper.SendCoins(ctx,
-				multisigAddr,
-				to,
-				sdk.Coins{sdk.Coin{
-					coin_fundside[i].Denom,
-					coin_fundside[i].Amount}})
+			err = k.bankKeeper.SendCoins(ctx, multisigAddr, to, sdk.Coins{coin_fundside[i]})
 			if err != nil {
 				return nil, fmt.Errorf("SendCoins failed balance of addr %v, balance %v, amount %v",
 					val.MultisigAddr,
