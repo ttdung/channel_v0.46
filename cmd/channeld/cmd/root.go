@@ -35,8 +35,8 @@ import (
 	dbm "github.com/tendermint/tm-db"
 	// this line is used by starport scaffolding # root/moduleImport
 
-	"github.com/AstraProtocol/astra/channel/app"
-	appparams "github.com/AstraProtocol/astra/channel/app/params"
+	"github.com/ttdung/channel_v0.46/app"
+	appparams "github.com/ttdung/channel_v0.46/app/params"
 )
 
 // NewRootCmd creates a new root command for a Cosmos SDK application

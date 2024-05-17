@@ -13,7 +13,7 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	tmtypes "github.com/tendermint/tendermint/types"
 
-	"github.com/AstraProtocol/astra/channel/app"
+	"github.com/ttdung/channel_v0.46/app"
 )
 
 func init() {

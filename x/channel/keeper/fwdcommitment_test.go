@@ -4,12 +4,12 @@ import (
 	"strconv"
 	"testing"
 
-	keepertest "github.com/AstraProtocol/astra/channel/testutil/keeper"
-	"github.com/AstraProtocol/astra/channel/testutil/nullify"
-	"github.com/AstraProtocol/astra/channel/x/channel/keeper"
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
+	keepertest "github.com/ttdung/channel_v0.46/testutil/keeper"
+	"github.com/ttdung/channel_v0.46/testutil/nullify"
+	"github.com/ttdung/channel_v0.46/x/channel/keeper"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 // Prevent strconv unused error

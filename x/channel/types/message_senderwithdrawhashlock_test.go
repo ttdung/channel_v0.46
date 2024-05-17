@@ -3,9 +3,9 @@ package types
 import (
 	"testing"
 
-	"github.com/AstraProtocol/astra/channel/testutil/sample"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
+	"github.com/ttdung/channel_v0.46/testutil/sample"
 )
 
 func TestMsgSenderwithdrawhashlock_ValidateBasic(t *testing.T) {

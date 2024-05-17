@@ -1,10 +1,10 @@
 package main
 
 import (
-	"channel/app"
-	"channel/cmd/channeld/cmd"
 	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
+	"github.com/ttdung/channel_v0.46/app"
+	"github.com/ttdung/channel_v0.46/cmd/channeld/cmd"
 	"os"
 )
 

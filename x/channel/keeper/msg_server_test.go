@@ -4,10 +4,10 @@ import (
 	"context"
 	"testing"
 
-	keepertest "github.com/AstraProtocol/astra/channel/testutil/keeper"
-	"github.com/AstraProtocol/astra/channel/x/channel/keeper"
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	keepertest "github.com/ttdung/channel_v0.46/testutil/keeper"
+	"github.com/ttdung/channel_v0.46/x/channel/keeper"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 func setupMsgServer(t testing.TB) (types.MsgServer, context.Context) {

@@ -3,10 +3,10 @@ package keeper_test
 import (
 	"testing"
 
-	testkeeper "github.com/AstraProtocol/astra/channel/testutil/keeper"
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
+	testkeeper "github.com/ttdung/channel_v0.46/testutil/keeper"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 func TestParamsQuery(t *testing.T) {

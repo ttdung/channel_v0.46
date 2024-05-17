@@ -3,15 +3,15 @@ package channel
 import (
 	"math/rand"
 
-	"github.com/AstraProtocol/astra/channel/testutil/sample"
-	channelsimulation "github.com/AstraProtocol/astra/channel/x/channel/simulation"
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	simappparams "github.com/cosmos/cosmos-sdk/simapp/params"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
+	"github.com/ttdung/channel_v0.46/testutil/sample"
+	channelsimulation "github.com/ttdung/channel_v0.46/x/channel/simulation"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 // avoid unused import issue

@@ -6,7 +6,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/std"
 	"github.com/cosmos/cosmos-sdk/x/auth/tx"
 
-	"github.com/AstraProtocol/astra/channel/app/params"
+	"github.com/ttdung/channel_v0.46/app/params"
 )
 
 // makeEncodingConfig creates an EncodingConfig for an amino based test configuration.

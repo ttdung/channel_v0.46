@@ -3,11 +3,11 @@ package channel_test
 import (
 	"testing"
 
-	keepertest "github.com/AstraProtocol/astra/channel/testutil/keeper"
-	"github.com/AstraProtocol/astra/channel/testutil/nullify"
-	"github.com/AstraProtocol/astra/channel/x/channel"
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/stretchr/testify/require"
+	keepertest "github.com/ttdung/channel_v0.46/testutil/keeper"
+	"github.com/ttdung/channel_v0.46/testutil/nullify"
+	"github.com/ttdung/channel_v0.46/x/channel"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 func TestGenesis(t *testing.T) {

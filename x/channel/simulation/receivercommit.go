@@ -3,11 +3,11 @@ package simulation
 import (
 	"math/rand"
 
-	"github.com/AstraProtocol/astra/channel/x/channel/keeper"
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
+	"github.com/ttdung/channel_v0.46/x/channel/keeper"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 func SimulateMsgReceivercommit(

@@ -3,10 +3,10 @@ package cli
 import (
 	"context"
 
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/spf13/cobra"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 func CmdListFwdcommitment() *cobra.Command {

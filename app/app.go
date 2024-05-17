@@ -103,13 +103,13 @@ import (
 	tmos "github.com/tendermint/tendermint/libs/os"
 	dbm "github.com/tendermint/tm-db"
 
-	channelmodule "github.com/AstraProtocol/astra/channel/x/channel"
-	channelmodulekeeper "github.com/AstraProtocol/astra/channel/x/channel/keeper"
-	channelmoduletypes "github.com/AstraProtocol/astra/channel/x/channel/types"
+	channelmodule "github.com/ttdung/channel_v0.46/x/channel"
+	channelmodulekeeper "github.com/ttdung/channel_v0.46/x/channel/keeper"
+	channelmoduletypes "github.com/ttdung/channel_v0.46/x/channel/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
-	appparams "github.com/AstraProtocol/astra/channel/app/params"
-	"github.com/AstraProtocol/astra/channel/docs"
+	appparams "github.com/ttdung/channel_v0.46/app/params"
+	"github.com/ttdung/channel_v0.46/docs"
 )
 
 const (
@@ -534,7 +534,7 @@ func New(
 
 	app.GovKeeper.SetHooks(
 		govtypes.NewMultiGovHooks(
-			// insert governance hooks receivers here
+		// insert governance hooks receivers here
 		),
 	)
 

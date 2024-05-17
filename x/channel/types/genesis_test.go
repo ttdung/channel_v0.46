@@ -3,8 +3,8 @@ package types_test
 import (
 	"testing"
 
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/stretchr/testify/require"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 func TestGenesisState_Validate(t *testing.T) {

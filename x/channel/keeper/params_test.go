@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"testing"
 
-	testkeeper "github.com/AstraProtocol/astra/channel/testutil/keeper"
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	"github.com/stretchr/testify/require"
+	testkeeper "github.com/ttdung/channel_v0.46/testutil/keeper"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 func TestGetParams(t *testing.T) {

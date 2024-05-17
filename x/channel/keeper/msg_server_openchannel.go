@@ -6,8 +6,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 func (k msgServer) Openchannel(goCtx context.Context, msg *types.MsgOpenchannel) (*types.MsgOpenchannelResponse, error) {

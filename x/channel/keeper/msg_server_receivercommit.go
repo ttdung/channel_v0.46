@@ -3,8 +3,8 @@ package keeper
 import (
 	"context"
 	"fmt"
-	"github.com/AstraProtocol/astra/channel/x/channel/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/ttdung/channel_v0.46/x/channel/types"
 )
 
 func (k msgServer) Receivercommit(goCtx context.Context, msg *types.MsgReceivercommit) (*types.MsgReceivercommitResponse, error) {
